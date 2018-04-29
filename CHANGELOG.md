@@ -40,6 +40,9 @@
 * XCAssets: the generated templates won't namespace groups by default anymore, use the `forceProvidesNamespaces` flag to enable this behaviour again.  
   [jechris](https://github.com/pjechris)
   [#453](https://github.com/SwiftGen/SwiftGen/issues/453)
+* Storyboards: split up the template into 2 parts: one for segues and one for scenes.  
+  [David Jennes](https://github.com/djbe) 
+  [#419](https://github.com/SwiftGen/SwiftGen/pull/419)
 
 ### New Features
 
