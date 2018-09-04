@@ -40,6 +40,9 @@
 * XCAssets: the generated templates won't namespace groups by default anymore, use the `forceProvidesNamespaces` flag to enable this behaviour again.  
   [jechris](https://github.com/pjechris)
   [#453](https://github.com/SwiftGen/SwiftGen/issues/453)
+* XCAssets: Dropped the old `allValues` constant, use the type specific constants such as `allColors`, `allDataItems` and `allImages`. The default value of `imageAlias` has also been changed from `Image` to `AssetImageTypeAlias`, to be consistent with the other types.  
+  [David Jennes](https://github.com/djbe) 
+  [#482](https://github.com/SwiftGen/SwiftGen/pull/482)
 
 ### New Features
 
