@@ -4,11 +4,11 @@
 #if os(OSX)
   import AppKit.NSImage
   public typealias AssetColorTypeAlias = NSColor
-  public typealias Image = NSImage
+  public typealias AssetImageTypeAlias = NSImage
 #elseif os(iOS) || os(tvOS) || os(watchOS)
   import UIKit.UIImage
   public typealias AssetColorTypeAlias = UIColor
-  public typealias Image = UIImage
+  public typealias AssetImageTypeAlias = UIImage
 #endif
 #if os(iOS) || os(tvOS) || os(OSX)
 public typealias AssetDataTypeAlias = NSDataAsset
@@ -44,8 +44,6 @@ public enum Asset {
       orange,
     ]
     // swiftlint:enable trailing_comma
-    @available(*, deprecated, renamed: "allImages")
-    public static let allValues: [AssetType] = allImages
   }
   public enum Data {
     public static let data = DataAsset(name: "Data")
@@ -64,8 +62,6 @@ public enum Asset {
     public static let allImages: [ImageAsset] = [
     ]
     // swiftlint:enable trailing_comma
-    @available(*, deprecated, renamed: "allImages")
-    public static let allValues: [AssetType] = allImages
   }
   public enum Images {
     public enum Exotic {
@@ -96,8 +92,6 @@ public enum Asset {
       `private`,
     ]
     // swiftlint:enable trailing_comma
-    @available(*, deprecated, renamed: "allImages")
-    public static let allValues: [AssetType] = allImages
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
@@ -156,27 +150,24 @@ public extension AssetDataTypeAlias {
 }
 #endif
 
-@available(*, deprecated, renamed: "ImageAsset")
-public typealias AssetType = ImageAsset
-
 public struct ImageAsset {
   public fileprivate(set) var name: String
 
-  public var image: Image {
+  public var image: AssetImageTypeAlias {
     let bundle = Bundle(for: BundleToken.self)
     #if os(iOS) || os(tvOS)
-    let image = Image(named: name, in: bundle, compatibleWith: nil)
+    let image = AssetImageTypeAlias(named: name, in: bundle, compatibleWith: nil)
     #elseif os(OSX)
     let image = bundle.image(forResource: name)
     #elseif os(watchOS)
-    let image = Image(named: name)
+    let image = AssetImageTypeAlias(named: name)
     #endif
     guard let result = image else { fatalError("Unable to load image named \(name).") }
     return result
   }
 }
 
-public extension Image {
+public extension AssetImageTypeAlias {
   @available(iOS 1.0, tvOS 1.0, watchOS 1.0, *)
   @available(OSX, deprecated,
     message: "This initializer is unsafe on macOS, please use the ImageAsset.image property")

@@ -44,8 +44,6 @@ internal enum XCTAssets {
       orange,
     ]
     // swiftlint:enable trailing_comma
-    @available(*, deprecated, renamed: "allImages")
-    internal static let allValues: [XCTAssetsType] = allImages
   }
   internal enum Data {
     internal static let data = XCTDataAsset(name: "Data")
@@ -64,8 +62,6 @@ internal enum XCTAssets {
     internal static let allImages: [XCTImageAsset] = [
     ]
     // swiftlint:enable trailing_comma
-    @available(*, deprecated, renamed: "allImages")
-    internal static let allValues: [XCTAssetsType] = allImages
   }
   internal enum Images {
     internal enum Exotic {
@@ -96,8 +92,6 @@ internal enum XCTAssets {
       `private`,
     ]
     // swiftlint:enable trailing_comma
-    @available(*, deprecated, renamed: "allImages")
-    internal static let allValues: [XCTAssetsType] = allImages
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
@@ -151,9 +145,6 @@ internal extension XCTData {
   }
 }
 #endif
-
-@available(*, deprecated, renamed: "XCTImageAsset")
-internal typealias XCTAssetsType = XCTImageAsset
 
 internal struct XCTImageAsset {
   internal fileprivate(set) var name: String
