@@ -2,6 +2,8 @@
 
 *** Work In Progress — Will be consolidated once the release is ready ***
 
+* IB #419: Split up the templates into one for scenes and one for segues (in preparation for future templates for accessibility labels, ...).
+
 # Templates 2.1 Migration Guide
 
 ## Functionality changes in 2.1 (SwiftGen 5.1)
