@@ -2,6 +2,11 @@
 
 *** Work In Progress — Will be consolidated once the release is ready ***
 
+* IB #423: Renamed `storyboards` to `ib`, to support future functionality.
+* Config #424: Commands now can have multiple outputs, each having an `output` path, a `templateName`/`templatePath` and `params`.
+* Config #424: `output` is deprecated (see `output`), same with `templateName`, `templatePath` and `params`.
+* Config #424: `paths` has been renamed to `inputs` (so `paths` is deprecated).
+
 # SwiftGen 5.1 Migration Guide
 
 ## Template functionality changes
